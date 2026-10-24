@@ -35,6 +35,5 @@ document.getElementById("tl").innerHTML=linha.map(a=>`<li><b>${a[0]}</b><small>$
 function abrir(){const h=location.hash.slice(1),el=h&&document.getElementById(h);if(el&&el.tagName==="DETAILS"){el.open=true;el.scrollIntoView()}}
 addEventListener("hashchange",abrir);abrir();
 document.getElementById("shareSite").onclick=()=>share("Lâmpada — estudo bíblico",base());
-document.getElementById("tema").onclick=()=>{const r=document.documentElement,dark=getComputedStyle(r).colorScheme==="dark";r.dataset.theme=dark?"light":"dark"};
 const hero=document.querySelector(".hero");
 hero.addEventListener("pointermove",ev=>{const b=hero.getBoundingClientRect();hero.style.setProperty("--x",(ev.clientX-b.left)+"px");hero.style.setProperty("--y",(ev.clientY-b.top)+"px")});

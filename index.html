@@ -14,7 +14,12 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="hero" id="topo"><button class="btn ghost sm tema-top" id="tema" aria-label="Alternar entre tema claro e escuro">Claro / escuro</button><div class="wrap">
+<header class="hero" id="topo"><button class="btn ghost sm tema-top" id="tema" aria-label="Alternar entre tema claro e escuro">Claro / escuro</button>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById("tema");
+try{var t=localStorage.getItem("lampada-tema");if(t)r.dataset.theme=t}catch(e){}
+b.addEventListener("click",function(){var n=getComputedStyle(r).colorScheme==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("lampada-tema",n)}catch(e){}});})();
+</script><div class="wrap">
 <h1>Lâmpada para os meus pés é a tua palavra.</h1>
 <div class="ref">Salmos 119:105</div>
 <p class="lead">Um espaço simples para ler, entender e refletir sobre a Bíblia. Escolha um estudo, leia com calma e compartilhe com quem você ama.</p>
