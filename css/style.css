@@ -54,3 +54,29 @@ select:focus-visible,input[type=search]:focus-visible,.v:focus-visible,.r:focus-
 .dica{color:var(--mute);font-size:14px}
 .r{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);color:var(--fg);font:inherit;font-size:15px;padding:12px 0;cursor:pointer}
 .r b{color:var(--acc);font-weight:500;margin-right:6px}
+:root{--h1:rgba(235,180,60,.38);--h2:rgba(110,190,140,.38);--h3:rgba(120,160,230,.38)}
+.grp{margin:48px 0 8px;font:500 1rem "Instrument Sans",sans-serif;color:var(--mute)}
+.grp:first-child{margin-top:0}
+blockquote.vs{font-style:normal;font-size:1.2rem;line-height:1.8}
+.vs sup{color:var(--acc);font:500 .7rem "Instrument Sans",sans-serif}
+.v.h1{background:var(--h1)}.v.h2{background:var(--h2)}.v.h3{background:var(--h3)}
+.v.n::after{content:" ✎";color:var(--acc);font-size:.75em}
+.sm{padding:7px 16px;font-size:13px}
+#ba{position:sticky;bottom:calc(10px + env(safe-area-inset-bottom,0px));margin-top:20px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+#ba[hidden]{display:none}
+#ba textarea{min-height:64px}
+.ba-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.x{background:none;border:0;color:var(--mute);font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.ba-cores{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.sw{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);cursor:pointer}
+.s1{background:var(--h1)}.s2{background:var(--h2)}.s3{background:var(--h3)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;border:1px solid var(--line)}
+.r em{display:block;color:var(--mute);margin-top:4px}
+.sw:focus-visible,.x:focus-visible,.dia input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.bar{height:4px;background:var(--line);border-radius:4px;margin:0 0 24px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
+.dia{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.dia label{display:flex;gap:12px;align-items:center;cursor:pointer}
+.dia input{accent-color:var(--acc);width:18px;height:18px;margin:0}
+@media(prefers-reduced-motion:reduce){.bar i{transition:none}}
+.tema-top{position:absolute;top:16px;right:20px;z-index:2}

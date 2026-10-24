@@ -8,6 +8,8 @@ O nome vem de Salmos 119:105: "Lâmpada para os meus pés é a tua palavra, e lu
 
 - **Estudar:** temas com um versículo, uma explicação curta e perguntas para reflexão.
 - **Ler:** o texto completo da Bíblia, com busca por palavra ou expressão.
+- **Praticar:** um plano de leitura de oito semanas, com progresso salvo.
+- **Estudar com o texto:** destaque e anotação de versículos no leitor.
 - **Entender o contexto:** uma linha do tempo com os grandes acontecimentos, da criação à Igreja primitiva.
 - **Compartilhar:** cada estudo e cada versículo tem um link próprio, fácil de enviar por mensagem.
 
@@ -17,13 +19,14 @@ O visual é minimalista de propósito, para que o texto seja o centro da página
 
 | Seção | Descrição |
 |---|---|
-| Abertura | Frase de destaque com um efeito de luz que acompanha o mouse ou o dedo |
-| Estudos | Seis temas que abrem ao toque, com versículo, explicação, perguntas e campo de anotações |
-| Bíblia | Leitor com livro, capítulo, busca e link por versículo |
+| Abertura | Botão de alternar entre tema claro e escuro no topo, e uma frase de destaque com um efeito de luz que acompanha o mouse ou o dedo |
+| Estudos | Vinte estudos em quatro grupos (Fundamentos, Parábolas de Jesus, Sermão do Monte e Salmos). O versículo é lido automaticamente da Bíblia Livre, com explicação, perguntas e campo de anotações |
+| Plano de leitura | Oito semanas com sete leituras cada, marcação de progresso e botão para abrir o capítulo no leitor |
+| Bíblia | Leitor com livro, capítulo, busca, link por versículo, destaque em três cores, anotações e lista de marcações |
 | Linha do tempo | Oito acontecimentos bíblicos em ordem cronológica |
-| Compartilhar | Botão para enviar o site e opção de alternar entre tema claro e escuro |
+| Compartilhar | Botão para enviar o site para amigos e familiares |
 
-As anotações de cada estudo ficam salvas apenas no navegador de quem escreve (`localStorage`). Nada é enviado para servidor nenhum.
+As anotações dos estudos, os destaques e anotações dos versículos e o progresso do plano ficam salvos apenas no navegador de quem usa (`localStorage`). Nada é enviado para servidor nenhum, e as marcações não passam de um aparelho para outro.
 
 ## Como foi construído
 
@@ -35,9 +38,10 @@ lampada/
 ├── css/
 │   └── style.css       visual: cores, fontes, espaçamentos, tema claro e escuro
 ├── js/
-│   ├── dados.js        conteúdo: estudos e linha do tempo
-│   ├── app.js          estudos, anotações, compartilhamento, tema, efeito de luz
-│   ├── biblia.js       leitor da Bíblia (carregamento, navegação, busca)
+│   ├── dados.js        conteúdo: estudos, plano de leitura e linha do tempo
+│   ├── app.js          estudos, compartilhamento, tema, efeito de luz
+│   ├── biblia.js       leitor da Bíblia (navegação, busca, destaques e anotações)
+│   ├── plano.js        plano de leitura e progresso
 │   └── biblia/
 │       └── blivre.json texto da Bíblia Livre
 └── README.md
@@ -70,24 +74,27 @@ Alternativas gratuitas: Netlify Drop (arrastar a pasta em app.netlify.com/drop),
 
 ## Como editar o conteúdo
 
-Todo o conteúdo dos estudos e da linha do tempo fica em `js/dados.js`.
+Todo o conteúdo fica em `js/dados.js`.
 
-Para **adicionar um estudo**, copie um bloco da lista `estudos` e troque os campos:
+**Adicionar um estudo:** copie um bloco da lista `estudos` e troque os campos. O texto do versículo não é digitado, ele é lido do `blivre.json` pelos números em `p`.
 
 ```js
 {
-  id: "exemplo",            // sem espaços nem acentos; vira o link (#exemplo)
+  g: "Parábolas de Jesus",   // grupo (estudos do mesmo grupo ficam juntos)
+  id: "exemplo",             // sem espaços nem acentos; vira o link (#exemplo)
   t: "Título do estudo",
-  r: "Livro 1:1",           // referência
-  v: "Texto do versículo.",
+  r: "Lucas 15:11-32",       // referência exibida
+  p: [42, 15, 11, 32],       // [livro, capítulo, versículo inicial, versículo final]
   x: "Explicação do texto.",
   q: ["Pergunta 1?", "Pergunta 2?"]
 }
 ```
 
-Para **adicionar um acontecimento**, acrescente uma linha na lista `linha`, no formato `["Título", "Referência", "Descrição"]`.
+Os livros seguem a numeração padrão do `blivre.json`: 1 Gênesis, 19 Salmos, 20 Provérbios, 40 Mateus, 42 Lucas, 43 João, 44 Atos, 45 Romanos, e assim por diante até 66 Apocalipse. Se um texto não aparecer, confira esses números.
 
-Os versículos citados nos estudos devem ser da mesma tradução usada no leitor (Bíblia Livre).
+**Alterar o plano de leitura:** edite a lista `plano`. Cada semana tem um título `t` e uma lista `d` de leituras no formato `["João", 43, 1]` (nome exibido, número do livro, capítulo).
+
+**Adicionar um acontecimento:** acrescente uma linha na lista `linha`, no formato `["Título", "Referência", "Descrição"]`.
 
 ## Texto bíblico e licença
 
@@ -97,7 +104,7 @@ Não inclua neste repositório traduções protegidas por direitos autorais (com
 
 ## Ideias para o futuro
 
-- Plano de leitura semanal
-- Novos estudos (parábolas, Sermão do Monte, Salmos)
-- Destaque e anotação de versículos no leitor
+- Mais estudos (profecias, cartas de Paulo, vida de Davi)
+- Planos de leitura em outros formatos (30 dias, Bíblia em um ano)
+- Exportar e importar as marcações para levar de um aparelho a outro
 - Domínio próprio (por exemplo, `.com.br`)
