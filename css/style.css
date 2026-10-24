@@ -40,3 +40,17 @@ footer{padding:96px 0 64px;text-align:center;color:var(--mute);font-size:15px}
 #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
 #toast.on{opacity:1}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#toast{transition:none}}
+.bib-ctl{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+select,input[type=search]{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+select{flex:1 1 140px}
+input[type=search]{width:100%;margin-bottom:8px}
+select:focus-visible,input[type=search]:focus-visible,.v:focus-visible,.r:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+#bt h3{font:500 2rem/1.2 "Cormorant Garamond",Georgia,serif;margin:28px 0 12px}
+#bt p:not(.dica){font:400 1.25rem/1.85 "Cormorant Garamond",Georgia,serif}
+.v{cursor:pointer;border-radius:4px}
+.v:hover{background:var(--glow)}
+.v.on{background:var(--glow);box-shadow:0 0 0 3px var(--glow)}
+.v sup{color:var(--acc);font:500 .7rem "Instrument Sans",sans-serif;margin-right:2px}
+.dica{color:var(--mute);font-size:14px}
+.r{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);color:var(--fg);font:inherit;font-size:15px;padding:12px 0;cursor:pointer}
+.r b{color:var(--acc);font-weight:500;margin-right:6px}
