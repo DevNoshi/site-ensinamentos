@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lâmpada — estudo bíblico</title>
+<meta name="description" content="Um espaço simples para ler, entender e refletir sobre a Bíblia.">
+<meta property="og:title" content="Lâmpada — estudo bíblico">
+<meta property="og:description" content="Estudos, reflexões e a linha do tempo da Bíblia. Leia com calma e compartilhe.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🕯️%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hero" id="topo"><div class="wrap">
+<h1>Lâmpada para os meus pés é a tua palavra.</h1>
+<div class="ref">Salmos 119:105</div>
+<p class="lead">Um espaço simples para ler, entender e refletir sobre a Bíblia. Escolha um estudo, leia com calma e compartilhe com quem você ama.</p>
+<a class="btn" href="#estudos">Começar a estudar</a>
+</div></header>
+
+<main class="wrap">
+<section id="estudos">
+<h2>Estudos</h2>
+<p class="sub">Seis temas para aprofundar. Em cada um: um texto, uma explicação e perguntas para refletir.</p>
+<div id="lista"></div>
+</section>
+
+<section id="linha">
+<h2>Linha do tempo bíblica</h2>
+<p class="sub">Os grandes acontecimentos da Bíblia, na ordem em que aconteceram.</p>
+<ol class="tl" id="tl"></ol>
+</section>
+
+<section id="convite">
+<h2>Compartilhe este estudo</h2>
+<p class="sub">Envie o site para um amigo ou família e estudem juntos.</p>
+<div class="row"><button class="btn" id="shareSite">Compartilhar o site</button><button class="btn ghost" id="tema">Alternar claro e escuro</button></div>
+</section>
+</main>
+
+<footer><div class="wrap"><span class="serif" style="font-size:1.3rem">Lâmpada</span><br>Textos bíblicos na tradução Almeida Revista e Corrigida (domínio público).</div></footer>
+<div id="toast" role="status"></div>
+
+<script src="js/dados.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
